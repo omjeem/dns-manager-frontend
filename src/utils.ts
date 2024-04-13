@@ -1,0 +1,1 @@
+export const API = "https://dns-manager-backend-3.onrender.com"
