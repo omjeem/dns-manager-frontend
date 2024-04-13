@@ -15,9 +15,9 @@ export function Main() {
                 "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
             }
-        }).then((res) => {
+        }).then((res:any) => {
             setTable(res.data.domains)
-        }).catch((err) => {
+        }).catch((err:any) => {
             console.log(err)
         })
     }, [])

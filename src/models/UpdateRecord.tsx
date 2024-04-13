@@ -51,7 +51,7 @@ export default function UpdateRecord(props: any) {
                                             }
                                             try {
                                                
-                                                const response = await toast.promise(
+                                                const response :any= await toast.promise(
                                                     axios.post(API + "/record/update/" + hostedZoneId, {
                                                         Name: props.Name,
                                                         Type: props.Type,

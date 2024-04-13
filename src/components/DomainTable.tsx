@@ -2,11 +2,11 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { Button } from "./Button";
 import { domainData } from "../recoil/atom";
 import CreateNewDomain from "../models/CreateNewDomain";
-import axios from "axios";
 import { API } from "../utils";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import DomainUpdate from "../models/DomainUpdate";
+import axios from "axios";
 
 export function DomainTable() {
     const table = useRecoilValue(domainData)

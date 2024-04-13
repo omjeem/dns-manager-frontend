@@ -36,7 +36,7 @@ export default function DomainUpdate(props: any) {
                                         <Button onClick={async () => {
                                             try {
 
-                                                const response = await toast.promise(
+                                                const response:any = await toast.promise(
                                                     axios.post(API + "/domain/" + props.Id, {
                                                         description: description
                                                     }, {

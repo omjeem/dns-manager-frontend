@@ -83,7 +83,7 @@ export default function CreateNewRecord({ domainName, setRecord }: { domainName:
                                             }
                                             try {
                                                 
-                                                const response = await toast.promise(
+                                                const response:any = await toast.promise(
                                                     axios.post(API + "/record/create/" + hostedZoneId, {
                                                         Name: domainName,
                                                         Type: recordType,

@@ -15,7 +15,7 @@ export function AppBar() {
                 "Authorization":localStorage.getItem("token"),
                 "Content-Type":"application/json"
               }
-         }).then((response)=>{
+         }).then((response : any)=>{
               setUsername(response.data.username)
          }).catch((err:any)=>{
               console.log("Error is ",err)

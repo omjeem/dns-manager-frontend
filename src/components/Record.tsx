@@ -39,7 +39,7 @@ function RecordTable() {
                 "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
             }
-        }).then((response) => {
+        }).then((response:any) => {
             setRecord(response.data.ResourceRecordSets)
 
         }).catch((err: any) => {
