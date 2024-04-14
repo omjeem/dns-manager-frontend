@@ -7,6 +7,7 @@ import CreateNewRecord from "../models/CreateNewRecord";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import UpdateRecord from "../models/UpdateRecord";
+import { ImportDNSData } from "../models/ImportDNSData";
 
 
 interface ResourceRecordType {
@@ -39,7 +40,7 @@ function RecordTable() {
                 "Authorization": localStorage.getItem("token"),
                 "Content-Type": "application/json"
             }
-        }).then((response:any) => {
+        }).then((response: any) => {
             setRecord(response.data.ResourceRecordSets)
 
         }).catch((err: any) => {
@@ -48,7 +49,12 @@ function RecordTable() {
     }, [])
 
     return <div className="relative overflow-x-auto py-4 border-2">
-        <div className="m-6 text-4xl">{record.length !== 0 ? (record[0] as Record).Name : "sample.com"}</div>
+        <div className="m-6 flex justify-between">
+            <div className=" text-4xl">{record.length !== 0 ? (record[0] as Record).Name : "sample.com"}</div>
+            <div className="flex justify-center items-center">
+              <ImportDNSData setRecord={setRecord}/>
+            </div>
+        </div>
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-500">
             <thead className="text-xs text-gray-700 uppercase border-2">
                 <tr>
@@ -62,7 +68,9 @@ function RecordTable() {
                         Resource Records
                     </th>
                     <th scope="col" className="px-6 py-3 text-sm">
-                        <CreateNewRecord domainName={record.length !== 0 ? (record[0] as Record).Name : "sample.com"} setRecord={setRecord} />
+                        <div className="space-y-2">
+                            <CreateNewRecord domainName={record.length !== 0 ? (record[0] as Record).Name : "sample.com"} setRecord={setRecord} />
+                        </div>
                     </th>
                 </tr>
             </thead>

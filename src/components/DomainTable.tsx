@@ -12,7 +12,7 @@ export function DomainTable() {
     const table = useRecoilValue(domainData)
 
     return <div className="relative overflow-x-auto py-4 border-2">
-        <div className="m-6 text-4xl">{"Domains Data"}</div>
+        <div className="m-6 text-4xl">{"Domain Dashboard"}</div>
 
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead className="text-xs text-gray-700 uppercase  bg-gray-00 dark:text-gray-00 border-2">

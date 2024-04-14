@@ -32,12 +32,12 @@ function SignInModel(props: any) {
         <SubHeading label={"Enter your credentials to access your account"} />
         <InputBox onChange={(e: any) => {
           setEmail(e.target.value)
-        }} placeholder="ex : om@gmail.com" label={"Email"} />
+        }} placeholder="ex : john_doe" label={"Email"} />
 
 
         <InputBox onChange={(e: any) => {
           setPassword(e.target.value)
-        }} placeholder="ex: omjee@123" label={"Password"} />
+        }} placeholder="ex : john@example.com" label={"Password"} />
 
 
         <div className="pt-4 pb-2">
@@ -102,27 +102,27 @@ function SignUpModel(props: any) {
 
         <InputBox onChange={(e: any) => {
           setUsername(e.target.value)
-        }} placeholder="ex : omjeem" label={"Username"} />
+        }} placeholder="ex : john_doe" label={"Username"} />
 
         <InputBox onChange={(e: any) => {
           setEmail(e.target.value)
-        }} placeholder="ex : om@gmail.com" label={"Email"} />
+        }} placeholder="ex : john@example.com" label={"Email"} />
 
         <InputBox onChange={(e: any) => {
           setPassword(e.target.value)
-        }} placeholder="ex: omjee@123" label={"Password"} />
+        }} placeholder="ex : p@ssw0rd" label={"Password"} />
 
         <InputBox onChange={(e: any) => {
           setAwsKey(e.target.value)
-        }} placeholder="ex: omjee@123" label={"AWS ACCESS KEY ID"} />
+        }} placeholder="ex : AKIAIOSFODNN7EXAMPLE " label={"AWS ACCESS KEY ID"} />
 
         <InputBox onChange={(e: any) => {
           setAwsSecret(e.target.value)
-        }} placeholder="ex: omjee@123" label={"AWS SECRET ACCESS KEY"} />
+        }} placeholder="ex : wJalrXUtnFEMI/K7MDENbPxRfiCYEXAMPLEKEY " label={"AWS SECRET ACCESS KEY"} />
 
         <InputBox onChange={(e: any) => {
           setAwsRegion(e.target.value)
-        }} placeholder="ex: omjee@123" label={"AWS Region"} />
+        }} placeholder="ex : us-west-2" label={"AWS Region"} />
 
         <div className="pt-4 pb-2">
           <Button label={"SignUp"} onClick={async () => {
