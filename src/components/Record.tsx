@@ -49,9 +49,9 @@ function RecordTable() {
     }, [])
 
     return <div className="relative overflow-x-auto py-4 border-2">
-        <div className="m-6 flex justify-between">
+        <div className="m-6 space-y-2 lg:flex justify-between">
             <div className=" text-4xl">{record.length !== 0 ? (record[0] as Record).Name : "sample.com"}</div>
-            <div className="flex justify-center items-center">
+            <div className="flex lg:justify-center items-center">
               <ImportDNSData setRecord={setRecord}/>
             </div>
         </div>

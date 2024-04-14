@@ -61,41 +61,50 @@ export function ImportDNSData({ setRecord }: { setRecord: any }) {
         <div >
 
             <form >
-              
-                <input
-                    type={"file"}
-                    id={"csvFileInput"}
-                    accept={".csv"}
-                    onChange={handleOnChange}
-                />
+                <div className="space-y-2">
 
-                <Button onClick={async (e: any) => {
-                    handleOnSubmit(e)
-                    if(file===null) return alert("Please select a file")
-                    const jsonData = JSON.stringify(array);
-                    
-                    try {
-                        const response = await toast.promise(axios.post(API + "/record/bulk/" + hostedZoneId, {
-                            jsonData
-                        }, {
-                            headers: {
-                                "Authorization": localStorage.getItem("token"),
-                                "Content-Type": "application/json",
-                            },
-                        }), {
-                            pending: "Importing Data...",
-                            success: "Data Imported Successfully"
-                        }, {
-                            autoClose: 2000, pauseOnHover: false
-                        })
-                        setRecord(response.data.ResourceRecordSets)
-                    } catch (err: any) {
-                        if (!err.response.data.message) alert("Server Error");
-                        alert(err.response.data.message)
-                    }
+                    <div>
+                        <input
+                            type={"file"}
+                            id={"csvFileInput"}
+                            accept={".csv"}
+                            onChange={handleOnChange}
+                        />
+                    </div>
+
+                    <div>
+                        <Button onClick={async (e: any) => {
+                            handleOnSubmit(e)
+                            if (file === null) return alert("Please select a file")
+                            const jsonData = JSON.stringify(array);
+
+                            try {
+                                const response = await toast.promise(axios.post(API + "/record/bulk/" + hostedZoneId, {
+                                    jsonData
+                                }, {
+                                    headers: {
+                                        "Authorization": localStorage.getItem("token"),
+                                        "Content-Type": "application/json",
+                                    },
+                                }), {
+                                    pending: "Importing Data...",
+                                    success: "Data Imported Successfully"
+                                }, {
+                                    autoClose: 2000, pauseOnHover: false
+                                })
+                                setRecord(response.data.ResourceRecordSets)
+                            } catch (err: any) {
+                                if (!err.response.data.message) alert("Server Error");
+                                alert(err.response.data.message)
+                            }
 
 
-                }} label={"Import"}></Button>
+                        }} label={"Import"}></Button>
+
+                    </div>
+
+                </div>
+
 
 
             </form>
